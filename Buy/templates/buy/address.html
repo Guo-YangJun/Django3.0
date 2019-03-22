@@ -1,0 +1,52 @@
+{% extends 'buy/base.html'%}
+{% load static %}
+<!doctype html>
+{% block add %}
+    <div class="site" style="margin-bottom: 150px">
+	<div id="main">
+		<div class="section section-bg-10 pt-11 pb-17">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="page-title text-center">收货地址</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section border-bottom pt-2 pb-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="breadcrumbs">
+							<li><a href="/buy/index/">首页</a></li>
+							<li>管理收货地址</li>
+							<li><a href="/buy/add_address/"> 添加收货地址</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="contact-form-wrapper">
+        <div class="cart_listbox" style="padding:0 200px">
+            <table style="width:100%">
+                <tr>
+                    <th width='10%'>收货人</th>
+                    <th width='20%'>电话号码</th>
+                    <th width='60%'>地址</th>
+                    <th width='10%'>操作</th>
+                </tr>
+                    {% for i in add %}
+                    <tr>
+                    <td>{{ i.recver }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.address }}</td>
+                    <td><a href="/buy/addressChange/{{ i.id }}/">修改</a><a href="/buy/addressDel/{{ i.id }}/">/删除</a></td>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+

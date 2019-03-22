@@ -1,0 +1,581 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1600px;
+            height: 80px;
+            background-color: #ff1427;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .box .a1{
+            margin-left: 200px;
+        }
+        .box .a2{
+            font-size: 20px;
+            text-decoration: none;
+            color: #b1b1b1;
+            height: 20px;
+            width: 20px;
+            background:rgba(0,0,0,.2);
+            text-align: center;
+            line-height: 20px;
+            position: absolute;
+            right: 220px;
+            top:5px;
+        }
+        .box2{
+            width: 1600px;
+            height: 30px;
+            background-color: #e3e4e5;
+            position: relative;
+        }
+        .box2 ul{
+            display: block;
+            width: 650px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 740px;
+        }
+        .box2 ul li{
+            list-style: none;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 30px;
+            color: #9e9e9e;
+        }
+        .box2 ul li a{
+            display: inline-block;
+            height: 12px;
+            text-decoration: none;
+            color: #9e9e9e;
+            font-size: 12px;
+        }
+        .box2 ul li .a1{
+            color: #ff590e;
+        }
+        .box2 ul li a:hover{
+            color: #ff590e;
+        }
+        .box2 .tb{
+            width: 190px;
+            height: 170px;
+            box-shadow:0  0   5px  1px  gray  ;
+            background: url("{% static 'buy/images/京东图标.png' %}") no-repeat 0 0;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            z-index: 2;
+        }
+        .box2 .dw{
+            line-height: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            color:#ff590e;
+        }
+        .box2 .dz{
+            width: 50px;
+            height: 30px;
+            box-sizing: border-box;
+             padding:0 2px;
+             font-size: 12px;
+             color: #ababab;
+             position: absolute;
+             top:0;
+             left: 400px;
+         }
+        .box2 .dz:hover{
+            background-color: white;
+        }
+        .box2 .ewm{
+            position: absolute;
+            top: 25px;
+            right: 208px;
+            z-index: 1;
+        }.box2 .dewm{
+            position: absolute;
+            top: 25px;
+            right: 208px;
+            z-index: 1;
+        }
+        .dizhi{
+            background-color: white;
+            box-sizing: border-box;
+            width: 250px;
+            height: 100px;
+            position: absolute;
+            padding:5px 0 0 10px;
+            top: 30px;
+            left: 400px;
+            z-index: -1;
+        }
+        .ondizhi{
+            z-index: 100;
+        }
+        .dizhi td{
+            font-size: 12px;
+            cursor: pointer;
+            padding: 6px 10px;
+        }
+        .dizhi .tb1{
+            background-color: #ff4500;
+        }
+        .dizhi .tb1:hover{
+            background-color: #ff4500;
+        }
+        .onbox2{
+            background-color: white;
+        }
+        .box2 .wd{
+            position: absolute;
+            top: 32px;
+            right: 480px;
+        }
+        .box2 .qy{
+            position: absolute;
+            top: 32px;
+            right: 400px;
+        }
+        .dizhi td:hover{
+            background-color: #dfdfdf;
+        }
+        .box3{
+            width: 1600px;
+            height: 140px;
+            background-color: #f0f3ef;
+            position: relative;
+        }
+        .box3 .wz{
+            position: absolute;
+            top: 70px;
+            left: 540px;
+            font-size: 13px;
+            color: #919191;
+            cursor: pointer;
+        }.box3 .wz2{
+            position: absolute;
+            top: 110px;
+            left:465px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .box4{
+            width: 1190px;
+            height: 60px;
+            text-align: end;
+            position: absolute;
+            top: 0;
+            left: 200px;
+        }
+        .box4 input{
+            width: 500px;
+            height: 35px;
+            padding-right: 35px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 25px;
+            left: 330px;
+        }
+        .box4 .a1{
+            display: inline-block;
+            width: 50px;
+            height: 35px;
+            color: #9e9e9e;
+            text-align: center;
+            line-height: 35px;
+            position: absolute;
+            left: 780px;
+            top: 25px;
+        }
+        .box4 .a1:hover{
+            color: #ff590e;
+        }
+        .box4 p{
+            display: inline-block;
+            width: 50px;
+            height: 35px;
+            background-color: #ff590e;
+            text-align: center;
+            line-height: 35px;
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top:25px;
+            left: 830px;
+        }
+        .box4 span{
+            display: inline-block;
+            width: 190px;
+            height: 35px;
+            border: 1px solid #9e9e9e;
+            text-align: center;
+            line-height: 35px;
+            color: #ff590e;
+            background-color: white;
+            box-sizing: border-box;
+            position: absolute;
+            right: 90px;
+            top: 25px;
+        }
+        .box4 span a{
+            text-decoration: none;
+            color: #ff590e;
+            font-size: 12px;
+        }
+        .box4 .div{
+            width: 300px;
+            height: 80px;
+            background:rgba(0,0,0,.6);
+            position: absolute;
+            top: 60px;
+            right: 90px;
+            text-align: center;
+            line-height: 78px;
+            color: #919191;
+        }
+        .box5{
+            width: 1600px;
+            height: 480px;
+            background-color: #f0f3ef;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .box5 .box6{
+            width: 590px;
+            height: 480px;
+            position: absolute;
+            top: 0;
+            left: 400px;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        .box5 .box6 ul li{
+            list-style: none;
+            float: left;
+            position: absolute;
+            display: none;
+        }
+        .box5 .box6 ul li:first-child{
+            display: block;
+        }
+        .box5 .box6 .span1{
+            width: 30px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background:rgba(0,0,0,.3);
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            left: 0;
+        }
+        .box5 .box6 .span2{
+            width: 30px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            background:rgba(0,0,0,.3);
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            right: 0;
+        }
+        .box5 .box6 span a{
+            text-decoration: none;
+            color: #fafafa;
+            font-size: 20px;
+        }
+        .box5 .box6 .a{
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            text-decoration: none;
+        }
+        .box5 .box6 .a p{
+            display:inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50px;
+            border: 2px solid white;
+        }
+        .box5 .box7{
+            width:190px ;
+            height:480px ;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .box5 .box7 ul{
+            list-style: none;
+            text-align: center;
+            margin-top:15px;
+        }
+        .box5 .box7 li{
+            padding: 6px 0;
+            cursor: pointer;
+            color: #636363;
+        }
+        .box5 .box7 li:hover{
+            color: orangered;
+            background-color: #bcbcbc;
+        }
+        .box5 .box8{
+            position: absolute;
+            top: 0;
+            left: 390px;
+            cursor: pointer;
+        }
+        .onyifu{
+            display: none;
+        }
+        .box9{
+            position: absolute;
+            top: 10px;
+            right: 410px;
+        }
+        .box9 a{
+            display: block;
+        }
+        .box9 a:nth-child(2){
+            padding: 7px 0;
+        }
+        .box10{
+            width: 190px;
+            height: 480px;
+            position: absolute;
+            top: 0;
+            right: 210px;
+            cursor: pointer;
+        }
+        .box11{
+            position: fixed;
+            top: 30%;
+            right: 0;
+        }
+        .box11 i{
+            box-sizing: border-box;
+            color: white;
+            background-color: #7a6e6e;
+            margin: 1px 0;
+            border-radius: 5px;
+            display:block;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            font-size: 24px;
+        }
+        .box11 i:hover{
+            color: orangered;
+        }
+    </style>
+    <script src="{% static 'buy/js/jd.js' %}"></script>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{% static 'buy/css/iconfont.css' %}">
+<script src="{% static 'buy/js/jd.js' %}"></script>
+<script src="{% static 'buy/js/jquery-3.0.0.js' %}"></script>
+<div id="big">
+<div class="box" style="opacity: 1">
+    <a class="a1" href="#"><img src="{% static 'buy/images/京东ggt.jpg' %}" alt=""></a>
+    <a class="a2 iconfont" href="#">&#xe73e;</a>
+</div>
+<div class="box2" style="position: relative">
+    <a href="/buy/about_myself/" style="color: orangered;position:absolute;top: 2px;left: 510px;font-size: 16px;text-decoration:none">--->回到简历首页<---</a>
+    <ul>
+        <li><a href="#">你好,请登录</a></li>
+        <li><a class="a1" href="#">免费注册</a></li>
+        <li>| <a href="#">我的订单</a></li>
+        <li>| <a class="iconfont li1" href="#">我的京东&#xe6bd;</a></li>
+        <li>| <a href="#">京东会员</a></li>
+        <li>| <a href="#" class="iconfont li">企业采购&#xe6bd;</a></li>
+        <li>| <a class="iconfont">客服服务&#xe6bd;</a></li>
+        <li>| <a class="iconfont">网站导航&#xe6bd;</a></li>
+        <li>| <a href="#">手机京东</a></li>
+    </ul>
+    <div class="ewm"><img src="{% static 'buy/images/京东6.png' %}" alt=""></div>
+    <div class="dewm onyifu"><img src="{% static 'buy/images/京东7.png' %}" alt=""></div>
+    <span class="wd">
+        <img src="{% static 'buy/images/京东9.png' %}" alt="">
+    </span>
+    <span class="qy">
+        <img src="{% static 'buy/images/京东8.png' %}" alt="无">
+    </span>
+    <a class="tb" href="#"></a>
+    <div class="dz">
+        <i class="iconfont dw">&#xe633;</i>
+        <span>北京</span>
+    </div>
+    <div class="dizhi">
+        <table>
+            <tr>
+                <td class="tb1">北京</td>
+                <td>上海</td>
+                <td>天津</td>
+                <td>重庆</td>
+                <td>河北</td>
+            </tr>
+            <tr>
+                <td>山西</td>
+                <td>河南</td>
+                <td>辽宁</td>
+                <td>安徽</td>
+                <td>吉林</td>
+            </tr>
+            <tr>
+                <td>广西</td>
+                <td>广东</td>
+                <td>深圳</td>
+                <td>上海</td>
+                <td>澳门</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<div class="box3">
+    <div class="box4">
+        <input type="text" placeholder="电脑">
+        <a href="#" class="a1 iconfont">&#xe64e;</a>
+        <p class="iconfont">&#xe650;</p>
+        <span class="iconfont">&#xf0179;<a href="#" >我的购物车(0)</a></span>
+        <div class="div onyifu"> 购物车中还没有商品，赶紧选购吧!</div>
+    </div>
+    <div class="wz">手机配件区 乳品冲调 新鲜橙子 游戏手机 厨具特惠 爆款家电 用券优惠 3万京豆 养殖囤货</div>
+    <div class="wz2">秒杀 优惠券 PLUS会员 闪购 拍卖 京东时尚 京东超市 京东生鲜 海囤全球 京东金融</div>
+</div>
+<div class="box5">
+    <div class="box6">
+        <ul>
+            <li jl="0"><a href="#"><img src="{% static 'buy/images/day1.jpg' %}" alt="无"></a></li>
+            <li jl="1"><a href="#"><img src="{% static 'buy/images/day2.jpg' %}" alt="无"></a></li>
+            <li jl="2"><a href="#"><img src="{% static 'buy/images/day3.jpg' %}" alt="无"></a></li>
+            <li jl="3"><a href="#"><img src="{% static 'buy/images/day4.jpg' %}" alt="无"></a></li>
+            <li jl="4"><a href="#"><img src="{% static 'buy/images/day5.jpg' %}" alt="无"></a></li>
+            <li jl="5"><a href="#"><img src="{% static 'buy/images/day6.jpg' %}" alt="无"></a></li>
+            <li jl="6"><a href="#"><img src="{% static 'buy/images/day7.jpg' %}" alt="无"></a></li>
+            <li jl="7"><a href="#"><img src="{% static 'buy/images/day8.jpg' %}" alt="无"></a></li>
+        </ul>
+        <span  class="iconfont span1"><a href="#">&#xeb15;</a></span>
+        <span  class="iconfont span2"><a href="#">&#xe638;</a></span>
+        <a href="#" class="a">
+            <p style="background-color: #ff590e" zb="0"></p>
+            <p zb="1"></p>
+            <p zb="2"></p>
+            <p zb="3"></p>
+            <p zb="4"></p>
+            <p zb="5"></p>
+            <p zb="6"></p>
+            <p zb="7"></p>
+        </a>
+    </div>
+    <div class="box7">
+        <ul>
+            <li class="li1">家电</li>
+            <li>手机</li>
+            <li>家居</li>
+            <li>男装</li>
+            <li>女装</li>
+            <li>美妆</li>
+            <li>男鞋</li>
+            <li>女鞋</li>
+            <li>房产</li>
+            <li>母婴</li>
+            <li>食品</li>
+            <li>艺术</li>
+            <li>医药</li>
+            <li>图文</li>
+            <li>其它</li>
+        </ul>
+    </div>
+    <div class="box8 onyifu"><img src="{% static 'buy/images/京东1.png' %}" alt="无"></div>
+    <div class="box9">
+        <a href="#"><img src="{% static 'buy/images/京东2.jpg' %}" alt="无"></a>
+        <a href="#"><img src="{% static 'buy/images/京东3.jpg' %}" alt="无"></a>
+        <a href="#"><img src="{% static 'buy/images/京东4.jpg' %}" alt="无"></a>
+    </div>
+    <div class="box10"><img src="{% static 'buy/images/京东5.png'%}" alt=""></div>
+</div>
+<div class="box11">
+    <i class="iconfont">&#xe610;</i>
+    <i class="iconfont">&#xf0179;</i>
+    <i class="iconfont">&#xe601;</i>
+    <i class="iconfont">&#xe60c;</i>
+    <i class="iconfont">&#xe6bb;</i>
+    <i class="iconfont">&#xe642;</i>
+    <i class="iconfont">&#xe61b;</i>
+</div>
+</div>
+<script>
+    $(function () {
+        var bj=0;
+    $(".span2").click(function xyz() {
+        bj++;
+        a++;
+        if(a>7){
+            a=0
+        }
+        if(bj>7){
+            bj=0
+        }
+        $(".box5 .box6 ul li").eq(bj).fadeIn(1000).siblings().fadeOut(1000);
+        $(".box5 .box6 a p").eq(a).css("background-color", "#ff590e").siblings().css("background-color", "");
+    });
+    $(".span1").click(function () {
+        bj--;
+        a--;
+        if(a<0){
+            a=7
+        }
+        if(bj<0){
+            bj=7
+        }
+        $(".box5 .box6 ul li").eq(bj).fadeIn(1000).siblings().fadeOut(1000);
+        $(".box5 .box6 a p").eq(a).css("background-color", "#ff590e").siblings().css("background-color","");
+    });
+    var time1;
+    var a=0;
+    function zdqh() {
+        time1=setInterval(function () {
+            $(".span2").click();
+            $(".box5 .box6 a p").eq(a).css("background-color", "#ff590e").siblings().css("background-color", "");
+        },2000)
+    }
+    zdqh();
+    $(".box5 .box6").mouseover(function () {
+        clearInterval(time1)
+    });
+    $(".box5 .box6").mouseout(function () {
+        zdqh()
+    });
+    $(".box5 .box6 a p").click(function () {
+    $(this).css("background-color", "#ff590e").siblings().css("background-color", "");
+    var c=$(this).attr("zb");
+    $(".box5 .box6 ul li").eq(c).fadeIn(1000).siblings().fadeOut(1000);
+    });
+    $(".dizhi td").click(function () {
+        $(".dz span").text($(this).text());
+        $(".dizhi .tb1").removeClass(" .dizhi .tb1");
+        $(this).css("background-color","#ff4500").parents().siblings().find("td").css("background-color", "white");
+        $(this).css("background-color","#ff4500").siblings("td").css("background-color", "white");
+    })
+    })
+</script>
+
+</body>
+</html>

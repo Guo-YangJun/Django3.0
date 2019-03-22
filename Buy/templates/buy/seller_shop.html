@@ -1,0 +1,84 @@
+{% extends 'buy/base.html'%}
+{% load static %}
+<!doctype html>
+{% block jscss %}
+<link rel='stylesheet' href='/static/buy/css/prettyPhoto.css' type='text/css' media='all'>
+<script type="text/javascript" src="/static/buy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/modernizr-2.7.1.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery.countdown.min.js"></script>
+<script type='text/javascript' src='/static/buy/js/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='/static/buy/js/jquery.prettyPhoto.init.min.js'></script>
+<script type="text/javascript" src="/static/buy/js/script.js"></script>
+<script type="text/javascript" src="/static/buy/js/core.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/widget.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/mouse.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/slider.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="/static/buy/js/price-slider.js"></script>
+{% endblock %}
+{% block add %}
+	<div class="site">
+	<div id="main">
+		<div class="section section-bg-10 pt-11 pb-17">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="page-title text-center">欢迎光临</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section border-bottom pt-2 pb-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="breadcrumbs">
+							<li><a href="/buy/index/">主页</a></li>
+							<li>{{ a.nickname }}的店铺</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section pt-7 pb-7">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 col-md-push-3" style="margin-left: -150px ;">
+						<div class="product-grid">
+                            {% for i in data %}
+							<div class="col-md-4 col-sm-6 product-item text-center mb-3" style="width: 25%;height:350px;">
+								<div class="product-thumb">
+									<a href="#">
+										<img src="{% static i.img %}" style="width: 200px;height: 200px" alt="" />
+									</a>
+									<div class="product-action">
+										<span class="add-to-cart">
+											<a href="#" data-toggle="tooltip" data-placement="top" title="添加购物车"></a>
+										</span>
+										<span class="compare">
+											<a href="#" data-toggle="tooltip" data-placement="top" title="查看详情"></a>
+										</span>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#">
+										<h2 class="title">{{ i.name }}</h2>
+										<span class="price">
+											<del>{{ i.nowprice }}</del>
+											<ins>{{ i.price }}</ins>
+										</span>
+									</a>
+								</div>
+							</div>
+                            {% endfor %}
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

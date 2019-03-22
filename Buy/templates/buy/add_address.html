@@ -1,0 +1,65 @@
+{% extends 'buy/base.html'%}
+{% load static %}
+<!doctype html>
+{% block add %}
+    <div class="site">
+	<div id="main">
+		<div class="section section-bg-10 pt-11 pb-17">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="page-title text-center">收货地址</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section border-bottom pt-2 pb-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<ul class="breadcrumbs">
+							<li><a href="/buy/index/">首页</a></li>
+							<li><a href="/buy/address/"> 管理收货地址</a></li>
+                            <li>添加收货地址</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="contact-form-wrapper"  style="padding: 0 200px">
+        <form class="contact-form" method="post" action="/buy/add_address/">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label>收货人姓名 <span class="required">*</span></label>
+                    <div class="form-wrap">
+                        <input type="text" name="recver" value="{{ addChange.recver }}" size="40" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>电话 <span class="required">*</span></label>
+                    <div class="form-wrap">
+                        <input type="text" name="phone" value="{{ addChange.phone }}" size="40" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>地址 <span class="required">*</span></label>
+                    <div class="form-wrap">
+                        <input type="text" name="address" value="{{ addChange.address }}" size="40" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-wrap text-center">
+                        <input type="submit" value="点击添加" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

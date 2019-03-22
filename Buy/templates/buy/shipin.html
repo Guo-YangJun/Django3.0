@@ -1,0 +1,66 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>视频播放</title>
+
+<link rel="stylesheet" href="{% static 'buy/css/plyr.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'buy/css/public.css' %}">
+<!-- 动态菜单CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'buy/css/menu.css' %}">
+<!-- jquery引入 -->
+<script src="{% static 'buy/js/jquery.min2.js' %}"></script>
+<!-- 动态菜单JS -->
+<script type="text/javascript" src="{% static 'buy/js/menu2.js' %}"></script>
+<script src="{% static 'buy/js/plyr.js' %}"></script>
+<style>
+	body{background-color: #262626}
+	.m{ margin-left: 320px; width: 650px; margin-top: 100px; }
+	
+</style>
+
+</head>
+<body style="background:url({% static 'buy/images/1.jpg' %})">
+	<div class="middle" style="margin-left: 970px;">
+	<div class="leftMenu" style="height: 500px;overflow: auto">
+		<div class="topMenu" style="line-height:73px;height: 73px">
+			<img class="banshi" src="" />
+			<a class="menuTitle" href="/buy/about_myself/" style="line-height:73px;height: 73px;margin-left: 28px">返回简历首页</a>
+			<img class="changeMenu" src="">
+		</div>
+		<div class="menu_list">
+			<ul>
+				<li class="">
+                    {% for i in url %}
+                        <form method="post" action="">
+                        {% csrf_token %}
+                        <input type="hidden" name="url"  class="url" value="{% static i.url %}">
+                        <input type="submit" class="fuMenu" style="background-color: black" value="小视频{{ i.name }}">
+                        </form>
+                    {% endfor %}
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="m">
+	<video poster="vs.png" controls >
+        {% if request.session.url2 %}
+	  <source class="url2" src="{{ urladdress }}" type="video/mp4" style="width: 600px;height: 400px">
+        {% else %}
+        <source class="url2" src="{% static 'buy/shipin/55.mp4' %}" type="video/mp4" style="width: 600px;height: 400px">
+        {% endif %}
+	  <!-- <source src="path/to/video.webm" type="video/webm">-->
+	  <!-- Captions are optional -->
+	</video>
+	<script>
+        plyr.setup();
+    </script>
+</div>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff">
+<p>本网站仅用于个人展示，视频来源抖音短视频，如有侵权联系删除！</p>
+</div>
+</body>
+</html>
+

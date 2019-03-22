@@ -1,0 +1,350 @@
+﻿{% extends 'buy/base.html'%}
+{% load static %}
+<!doctype html>
+{% block add %}
+	<div id="main">
+		<div class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 p-0">
+						<div id="rev_slider" class="rev_slider fullscreenbanner">
+							<ul>
+								<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
+									<img src="/static/buy/images/slider/slide_bg_4.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" />
+									<div class="tp-caption rs-parallaxlevel-2"
+										 data-x="center" data-hoffset=""
+										 data-y="center" data-voffset="-80"
+										 data-width="['none','none','none','none']"
+										 data-height="['none','none','none','none']"
+										 data-type="image" data-responsive_offset="on"
+										 data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+										 data-textAlign="['inherit','inherit','inherit','inherit']"
+										 data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+										 data-paddingbottom="[0,0,0,0]"
+										 data-paddingleft="[0,0,0,0]">
+											<img src="/static/buy/images/slider/slide_6.png" alt="" />
+									</div>
+									<div class="tp-caption rs-parallaxlevel-1"
+										 data-x="center" data-hoffset=""
+										 data-y="center" data-voffset="-80"
+										 data-width="['none','none','none','none']"
+										 data-height="['none','none','none','none']"
+										 data-type="image" data-responsive_offset="on"
+										 data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+										 data-textAlign="['inherit','inherit','inherit','inherit']"
+										 data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+										 data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+											<img src="/static/buy/images/slider/slide_7.png" alt="" />
+									</div>
+								</li>
+								<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
+									<img src="/static/buy/images/slider/slide_bg_5.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" />
+									<div class="tp-caption rs-parallaxlevel-1"
+										 data-x="center" data-hoffset=""
+										 data-y="center" data-voffset="-120"
+										 data-width="['none','none','none','none']"
+										 data-height="['none','none','none','none']"
+										 data-type="image" data-responsive_offset="on"
+										 data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+										 data-textAlign="['inherit','inherit','inherit','inherit']"
+										 data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+										 data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+											<img src="/static/buy/images/slider/slide_8.png" alt="" />
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-bg-1 section-cover pt-17 pb-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="text-center floating">
+							<img src="{% static hot_one_img %}" style="width: 350px;height: 350px" alt="" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="mb-1 section-pretitle default-left">热卖 hot</div>
+						<h2 class="section-title mtn-2 mb-3">Top</h2>
+						<p class="mb-4">
+							{{ hot_one_description }}
+						</p>
+						<a class="organik-btn arrow" href="/buy/shop_detail/{{ hot_one_id }}/">立刻去买</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-bg-2 section-cover pt-14">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="text-center">
+							<div class="mb-1 section-pretitle white">热卖 hot</div>
+							<h2 class="section-title mtn-2 mb-3">Top</h2>
+							<p class="white mb-4">
+								{{  hot_tow_description }}
+							</p>
+							<a class="organik-btn arrow" href="/buy/shop_detail/{{ hot_tow_id }}/" style="color: white">立刻去买</a>
+							<div class="countdown-wrap mb-4">
+								<div class="countdown-content">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="text-center floating">
+							<img src="{% static hot_tow_img %}" style="width: 350px;height: 350px" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-bg-3 pt-6 pb-6">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center mb-1 section-pretitle">纯天然</div>
+						<h2 class="text-center section-title mtn-2" style="color: #5fbd74">无污染</h2>
+						<div class="organik-seperator mb-9 center">
+							<span class="sep-holder"><span class="sep-line"></span></span>
+							<div class="sep-icon"><i class="organik-flower"></i></div>
+							<span class="sep-holder"><span class="sep-line"></span></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="organik-special-title">
+							<div class="number">01</div>
+							<div class="title">产地</div>
+						</div>
+						<p>来自世界各地好品质</p>
+						<div class="mb-8"></div>
+						<div class="organik-special-title">
+							<div class="number">02</div>
+							<div class="title">栽培</div>
+						</div>
+						<p>自然生长，拒绝温室</p>
+					</div>
+					<div class="col-md-4">
+						<div class="mb-8"></div>
+					</div>
+					<div class="col-md-4">
+						<div class="organik-special-title align-right">
+							<div class="number">03</div>
+							<div class="title">饮料</div>
+						</div>
+						<p>采用天然果蔬压榨</p>
+						<div class="mb-8"></div>
+						<div class="organik-special-title align-right">
+							<div class="number">04</div>
+							<div class="title">种类</div>
+						</div>
+						<p>各种网红热卖果蔬饮料</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section border-bottom mt-6 mb-5">
+			<div class="container">
+				<div class="row">
+					<div class="organik-process">
+						<div class="col-md-3 col-sm-6 organik-process-small-icon-step">
+							<div class="icon">
+								<i class="organik-delivery"></i>
+							</div>
+							<div class="content">
+								<div class="title">全场包邮</div>
+								<div class="text">急速发货</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 organik-process-small-icon-step">
+							<div class="icon">
+								<i class="organik-hours-support"></i>
+							</div>
+							<div class="content">
+								<div class="title">全天营业</div>
+								<div class="text">7*24小时</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 organik-process-small-icon-step">
+							<div class="icon">
+								<i class="organik-credit-card"></i>
+							</div>
+							<div class="content">
+								<div class="title">安全支付</div>
+								<div class="text">多种方式</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 organik-process-small-icon-step">
+							<div class="icon">
+								<i class="organik-lettuce"></i>
+							</div>
+							<div class="content">
+								<div class="title">贴心服务</div>
+								<div class="text">欢迎咨询</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section pt-12 pb-9">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center mb-1 section-pretitle">Hot</div>
+						<h2 class="text-center section-title mtn-2">其它热卖</h2>
+						<div class="organik-seperator center">
+							<span class="sep-holder"><span class="sep-line"></span></span>
+							<div class="sep-icon"><i class="organik-flower"></i></div>
+							<span class="sep-holder"><span class="sep-line"></span></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 p-0">
+						<div class="text-center">
+							<ul class="masonry-filter">
+								<li><a href="#" data-filter="" class="active">全部</a></li>
+								<li><a href="#" data-filter=".fruits">水果</a></li>
+								<li><a href="#" data-filter=".vegetables">蔬菜</a></li>
+								<li><a href="#" data-filter=".juice">饮料</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="product-grid masonry-grid-post">
+                        {% for i in data %}
+						<div class="col-md-3 col-sm-6 product-item masonry-item text-center juice">
+							<div class="product-thumb">
+								<a href="/buy/shop_detail/{{ i.id }}/">
+									<div class="badges">
+										<span class="hot">Hot</span>
+									</div>
+									<img src="{% static i.img %}" style="width: 256px;height: 256px" alt="" />
+								</a>
+								<div class="product-action">
+									<span class="add-to-cart">
+										<a data-toggle="tooltip" data-placement="top" title="查看"></a>
+									</span>
+									<span class="compare">
+										<a data-toggle="tooltip" data-placement="top" title="详情"></a>
+									</span>
+								</div>
+							</div>
+							<div class="product-info">
+								<a href="/buy/shop_detail/{{ hot_tow_id }}/">
+									<h2 class="title">{{ i.name }}</h2>
+									<span class="price">{{ i.price }}</span>
+								</a>
+							</div>
+						</div>
+                        {% endfor %}
+                        {% for i in data2 %}
+						<div class="col-md-3 col-sm-6 product-item masonry-item text-center fruits">
+							<div class="product-thumb">
+								<a href="/buy/shop_detail/{{ hot_tow_id }}/">
+									<div class="badges">
+										<span class="hot">Hot</span>
+									</div>
+									<img src="{% static i.img %}" style="width: 256px;height: 256px" alt="" />
+								</a>
+								<div class="product-action">
+									<span class="add-to-cart">
+										<a  data-toggle="tooltip" data-placement="top" title="查看"></a>
+									</span>
+									<span class="compare">
+										<a  data-toggle="tooltip" data-placement="top" title="详情"></a>
+									</span>
+								</div>
+							</div>
+							<div class="product-info">
+								<a href="/buy/shop_detail/{{ hot_tow_id }}/">
+									<h2 class="title">{{ i.name }}</h2>
+									<span class="price">{{ i.price }}</span>
+								</a>
+							</div>
+						</div>
+                        {% endfor %}
+                        {% for i in data3 %}
+						<div class="col-md-3 col-sm-6 product-item masonry-item text-center vegetables">
+							<div class="product-thumb">
+								<a href="/buy/shop_detail/{{ i.id }}/">
+									<div class="badges">
+										<span class="hot">Hot</span>
+									</div>
+									<img src="{% static i.img %}" style="width: 256px;height: 256px" alt="" />
+								</a>
+								<div class="product-action">
+									<span class="add-to-cart">
+										<a data-toggle="tooltip" data-placement="top" title="查看"></a>
+									</span>
+									<span class="compare">
+										<a  data-toggle="tooltip" data-placement="top" title="详情"></a>
+									</span>
+								</div>
+							</div>
+							<div class="product-info">
+								<a href="/buy/shop_detail/{{ hot_tow_id }}/">
+									<h2 class="title">{{ i.name }}</h2>
+									<span class="price">{{ i.price }}</span>
+								</a>
+							</div>
+						</div>
+                        {% endfor %}
+					</div>
+					<div class="loadmore-contain">
+						<a class="organik-btn small" href="/buy/all_shop/1/"> 查看全部 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section bg-light pt-10 pb-10">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center mb-1 section-pretitle">App</div>
+						<h2 class="text-center section-title mtn-2">想随时随地购买？</h2>
+						<div class="organik-seperator center mb-6">
+							<span class="sep-holder"><span class="sep-line"></span></span>
+							<div class="sep-icon"><i class="organik-flower"></i></div>
+							<span class="sep-holder"><span class="sep-line"></span></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="accordion icon-left" id="accordion1">
+							<div class="accordion-group toggle">
+								<div class="accordion-heading toggle_title active">
+									<a class="accordion-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="collapse1" href="#collapse1">
+										App
+									</a>
+									<span class="icon"><i class="ion-heart"></i></span>
+								</div>
+								<div id="collapse1" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										<p>
+											尽情期待>>>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="text-center app-desc floating">
+							<img src="/static/buy/images/app-desc.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

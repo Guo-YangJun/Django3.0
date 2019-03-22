@@ -1,0 +1,248 @@
+{% load static %}
+<!doctype html>
+<html lang="utf-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>{% block title %}果饮ORGANIK{% endblock %}</title>
+<link rel="stylesheet" href="/static/buy/css/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" href="/static/buy/css/font-awesome.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/buy/css/ionicons.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/static/buy/css/owl.carousel.css" type="text/css" media="all">
+<link rel="stylesheet" href="/static/buy/css/owl.theme.css" type="text/css" media="all">
+<link rel="stylesheet" href="/static/buy/css/settings.css" type="text/css" media="all">
+<link rel="stylesheet" href="/static/buy/css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="/static/buy/css/custom.css" type="text/css" media="all">
+<link href="http://fonts.googleapis.com/css?family=Great+Vibes%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+{% block jscss %}
+{% endblock %}
+<style>
+    .gb{
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="site">
+	<div class="topbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="topbar-text">
+						<span>欢迎访问</span>
+						<span>本网站仅用于个人展示 By-GuoYangJun</span>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="topbar-menu">
+						<ul class="topbar-menu">
+                            {% if request.session.user %}
+                             <li>欢迎{{ request.session.user }}</li>
+                             <li><a href="/buy/logout/">注销</a></li>
+                            {% else %}
+							<li><a href="/buy/login/">登录</a></li>
+							<li><a href="/buy/register/">没有账号？立即注册</a></li>
+                            {% endif %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header id="header" class="header header-desktop header-2">
+		<div class="top-search">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<form>
+							<input type="search" class="top-search-input" name="s" placeholder="What are you looking for?" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<a href="#" id="logo">
+						<img class="logo-image" src="/static/buy/images/logo.png" alt="Organik Logo" />
+					</a>
+				</div>
+				<div class="col-md-9">
+					<div class="header-right"  style="margin-right:200px">
+						<nav class="menu">
+							<ul class="main-menu">
+								<li><a href="/buy/index/">首页</a></li>
+								<li><a href="/buy/about_myself/">关于我</a></li>
+								<li><a href="/buy/all_shop/1/">全部商品</a></li>
+								<li><a href="/buy/all_seller">查看店家</a></li>
+								<li><a href="/buy/contact_us/">联系我们</a></li>
+								<li>
+									<a href="/buy/cart/">购物车<i class="ion-bag"></i></a>
+								</li>
+							</ul>
+						</nav>
+						<div class="btn-wrap">
+							<div class="mini-cart-wrap">
+								<div class="mini-cart">
+								</div>
+								<div class="widget-shopping-cart-content">
+									<ul class="cart-list">
+										<li>
+											<a href="#" class="remove">×</a>
+											<a href="shop-detail.html">
+												<img src="/static/buy/images/shop/thumb/shop_1.jpg" alt="" />
+												Orange Juice&nbsp;
+											</a>
+											<span class="quantity">1 × $12.00</span>
+										</li>
+										<li>
+											<a href="#" class="remove">×</a>
+											<a href="shop-detail.html">
+												<img src="/static/buy/images/shop/thumb/shop_2.jpg" alt="" />
+												Aurore Grape&nbsp;
+											</a>
+											<span class="quantity">1 × $9.00</span>
+										</li>
+									</ul>
+									<p class="total">
+										<strong>Subtotal:</strong>
+										<span class="amount">$21.00</span>
+									</p>
+									<p class="buttons">
+										<a href="cart.html" class="view-cart">View cart</a>
+										<a href="checkout.html" class="checkout">Checkout</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header class="header header-mobile">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div class="header-left">
+						<div id="open-left"><i class="ion-navicon"></i></div>
+					</div>
+				</div>
+				<div class="col-xs-8">
+					<div class="header-center">
+						<a href="#" id="logo-2">
+							<img class="logo-image" src="/static/buy/images/logo.png" alt="Organik Logo" />
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<div class="header-right">
+						<div class="mini-cart-wrap">
+							<a href="cart.html">
+								<div class="mini-cart">
+									<div class="mini-cart-icon" data-count="2">
+										<i class="ion-bag"></i>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    {% block add%}
+    {% endblock %}
+	<footer class="footer">
+		<div class="container">
+			<div class="row" style="width: 1200px;height: 140px;margin-left: 60px">
+				<div class="col-md-5" style="width: 300px">
+					<img id="qq" src="{% static '/buy/images/qq.png' %}" style="width: 50px;height: 50px" class="footer-logo" alt=""  />
+					<p>腾讯QQ</p>
+                    <img id ='qq1' src="{% static '/buy/images/qq.jpg' %}" style="width: 156px;height: 156px;margin-left: -50px;display: none">
+				</div>
+				<div class="col-md-5" style="width: 300px">
+                    <a href="https://weibo.com/6376410822/profile?rightmod=1&wvr=6&mod=personinfo">
+					<img src="{% static '/buy/images/weibo.png' %}" style="width: 50px;height: 50px" class="footer-logo" alt="" />
+					<p>新浪微博</p>
+                    </a>
+				</div>
+				<div class="col-md-5" style="width: 300px">
+                    <a href="https://github.com/Guo-YangJun">
+					<img src="{% static '/buy/images/github.png' %}" style="width: 50px;height: 50px" class="footer-logo" alt="" />
+					<p>GitHub</p>
+                    </a>
+				</div>
+                <div class="col-md-5" style="width: 300px">
+					<img id="wx" src="{% static '/buy/images/weixin.png' %}" style="width: 50px;height: 50px" class="footer-logo" alt="" />
+					<p>&nbsp&nbsp微信&nbsp&nbsp</p>
+                    <img id='wx1' src="{% static '/buy/images/wx.jpg' %}" style="width: 156px;height: 156px;margin-left: -50px;display: none">
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					版本号&copy; 2019.3.0
+				</div>
+				<div class="col-md-4">
+					<img src="/static/buy/images/footer_payment.png" alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="backtotop" id="backtotop"></div>
+	</div>
+</div>
+<script>
+    window.onload=function () {
+        var box = document.getElementById("wx");
+        var box2 = document.getElementById("wx1");
+        var box3= document.getElementById("qq");
+        var box4= document.getElementById("qq1");
+        box.onmousemove=function () {
+           box2.style.display='block';
+        };
+        box.onmouseout=function () {
+           box2.style.display='none';
+        };
+        box3.onmousemove=function () {
+           box4.style.display='block';
+        };
+        box3.onmouseout=function () {
+           box4.style.display='none';
+        };
+    }
+
+</script>
+<script type="text/javascript" src="/static/buy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/modernizr-2.7.1.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery.isotope.init.js"></script>
+<script type="text/javascript" src="/static/buy/js/script.js"></script>
+
+<script type="text/javascript" src="/static/buy/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="/static/buy/js/extensions/revolution.extension.parallax.min.js"></script>
+</body>
+</html>
